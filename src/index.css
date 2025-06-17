@@ -1,0 +1,88 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system with Rick and Morty theme */
+
+@layer base {
+  :root {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 224 71% 4%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 174 100% 41%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 215 28% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 215 28% 17%;
+    --muted-foreground: 217 11% 65%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+    --ring: 174 100% 41%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 174 100% 41%;
+    --sidebar-primary-foreground: 222 47% 11%;
+    --sidebar-accent: 216 34% 17%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 216 34% 17%;
+    --sidebar-ring: 174 100% 41%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(0, 212, 170, 0.1) 0%, transparent 25%),
+      radial-gradient(circle at 75% 75%, rgba(14, 165, 233, 0.1) 0%, transparent 25%);
+  }
+}
+
+@layer components {
+  .portal-glow {
+    @apply shadow-lg shadow-portal/25 border border-portal/30;
+  }
+  
+  .portal-glow:hover {
+    @apply shadow-xl shadow-portal/40 border-portal/50;
+  }
+  
+  .episode-card {
+    @apply bg-card/50 backdrop-blur-sm border border-border/50 rounded-lg p-6 transition-all duration-300;
+  }
+  
+  .episode-card:hover {
+    @apply scale-105 portal-glow;
+  }
+  
+  .character-card {
+    @apply bg-card/30 backdrop-blur-sm border border-border/30 rounded-lg p-4 transition-all duration-200;
+  }
+  
+  .character-card:hover {
+    @apply scale-105 border-portal/40;
+  }
+}
